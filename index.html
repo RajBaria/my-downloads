@@ -197,7 +197,7 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // તમારી અપલોડ કરેલી ફાઈલ અહી ઉમેરી છે
+// તમારી અપલોડ કરેલી ફાઈલ અને લિંક અહી ઉમેરી છે
         const files = [
             {
                 name: "Helical Solar System.apk",
@@ -206,16 +206,26 @@
                 date: "Sept 2026",
                 icon: "fa-android",
                 iconClass: "file-icon-apk",
-                url: "https://github.com/RajBaria/my-downloads/raw/refs/heads/main/Helical%20Solar%20System.apk"
+                url: "https://github.com/RajBaria/my-downloads/raw/refs/heads/main/Helical%20Solar%20System.apk",
+                isLink: false
+            },
+            {
+                name: "3D Solar App (Web View)",
+                description: "To view the 3D Solar app directly in Chrome, open this link.",
+                size: "Web Link",
+                date: "Web",
+                icon: "fa-chrome", // કે "fa-globe" પણ વાપરી શકો છો
+                iconClass: "file-icon-img", // વાદળી કલર માટે
+                url: "https://rajbaria.github.io/3dsolarbyraj/",
+                isLink: true
             }
         ];
 
-        document.getElementById('fileCount').textContent = `${files.length} Files`;
+        document.getElementById('fileCount').textContent = `${files.length} Files/Links`;
 
         const container = document.getElementById('fileContainer');
 
         if (files.length === 0) {
-            // જો લિસ્ટ ખાલી હોય તો આ મેસેજ દેખાશે
             container.innerHTML = `
                 <div class="col-span-1 md:col-span-2 text-center py-16 opacity-80 glass-card rounded-2xl">
                     <i class="fas fa-folder-open text-gray-400 text-6xl mb-4"></i>
@@ -228,6 +238,15 @@
                 const card = document.createElement('div');
                 card.className = 'glass-card rounded-2xl p-5 flex items-start gap-4 transition-all hover:-translate-y-2 hover:shadow-2xl duration-300 group';
                 
+                // જો આ લિંક હોય, તો target="_blank" અને ડાઉનલોડ એટ્રીબ્યુટ વગરનો કોડ વાપરીએ
+                const actionButton = file.isLink 
+                    ? `<a href="${file.url}" target="_blank" class="shrink-0 w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer border border-blue-100 group-hover:border-blue-600 group-hover:shadow-lg group-hover:shadow-blue-500/30">
+                        <i class="fas fa-external-link-alt text-lg"></i>
+                       </a>`
+                    : `<a href="${file.url}" download="${file.name}" class="shrink-0 w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer border border-blue-100 group-hover:border-blue-600 group-hover:shadow-lg group-hover:shadow-blue-500/30">
+                        <i class="fas fa-download text-lg"></i>
+                       </a>`;
+
                 card.innerHTML = `
                     <div class="w-14 h-14 rounded-xl bg-white shadow-sm border border-gray-100 flex items-center justify-center shrink-0">
                         <i class="fab ${file.icon} text-3xl ${file.iconClass}"></i>
@@ -236,13 +255,11 @@
                         <h3 class="text-lg font-bold text-gray-900 truncate" title="${file.name}">${file.name}</h3>
                         <p class="text-sm text-gray-600 mb-2 truncate">${file.description}</p>
                         <div class="flex items-center gap-3 text-xs text-gray-500 font-medium">
-                            <span class="flex items-center gap-1 bg-white/50 px-2 py-1 rounded-md"><i class="fas fa-database text-gray-400"></i> ${file.size}</span>
-                            <span class="flex items-center gap-1 bg-white/50 px-2 py-1 rounded-md"><i class="far fa-calendar-alt text-gray-400"></i> ${file.date}</span>
+                            <span class="flex items-center gap-1 bg-white/50 px-2 py-1 rounded-md"><i class="${file.isLink ? 'fas fa-link' : 'fas fa-database'} text-gray-400"></i> ${file.size}</span>
+                            <span class="flex items-center gap-1 bg-white/50 px-2 py-1 rounded-md"><i class="${file.isLink ? 'fas fa-globe' : 'far fa-calendar-alt'} text-gray-400"></i> ${file.date}</span>
                         </div>
                     </div>
-                    <a href="${file.url}" download="${file.name}" class="shrink-0 w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer border border-blue-100 group-hover:border-blue-600 group-hover:shadow-lg group-hover:shadow-blue-500/30">
-                        <i class="fas fa-download text-lg"></i>
-                    </a>
+                    ${actionButton}
                 `;
                 container.appendChild(card);
             });
