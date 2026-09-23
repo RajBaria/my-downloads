@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajkumar Baria - My Files & Links</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Updated FontAwesome to 6.5.1 to ensure the new X (Twitter) logo works -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Blobs for Unique Look */
+        .bg-shape {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            animation: float 20s infinite alternate ease-in-out;
+            opacity: 0.6;
+        }
+        .shape-1 {
+            width: 400px; height: 400px;
+            background-color: #3b82f6; /* Blue */
+            top: -100px; left: -100px;
+        }
+        .shape-2 {
+            width: 500px; height: 500px;
+            background-color: #a855f7; /* Purple */
+            bottom: -200px; right: -150px;
+            animation-delay: -5s;
+        }
+        .shape-3 {
+            width: 300px; height: 300px;
+            background-color: #ec4899; /* Pink */
+            top: 40%; left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom Social Buttons */
+        .social-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            color: #4b5563; /* text-gray-600 */
+            border: 1px solid rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.25rem;
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Brand Colors on Hover */
+        .social-btn.facebook:hover {
+            background: #1877F2;
+            box-shadow: 0 10px 20px rgba(24, 119, 242, 0.4);
+        }
+        .social-btn.x-twitter:hover {
+            background: #000000;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        .social-btn.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            box-shadow: 0 10px 20px rgba(228, 64, 95, 0.4);
+        }
+        .social-btn.whatsapp:hover {
+            background: #25D366;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+        }
+        .social-btn.gmail:hover {
+            background: #EA4335;
+            box-shadow: 0 10px 20px rgba(234, 67, 53, 0.4);
+        }
+
+        .file-icon-pdf { color: #ef4444; }
+        .file-icon-apk { color: #10b981; }
+        .file-icon-zip { color: #f59e0b; }
+        .file-icon-img { color: #3b82f6; }
+    </style>
+</head>
+<body class="text-gray-800 antialiased p-4 md:p-8">
+
+    <!-- Background Shapes -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="max-w-4xl mx-auto relative z-10">
+        <!-- Header -->
+        <header class="glass-card rounded-3xl mb-8 flex flex-col overflow-hidden">
+            
+            <!-- Cover Photo -->
+            <div class="w-full h-36 md:h-52 bg-cover bg-center bg-no-repeat" style="background-image: url('1788200164.jpg');"></div>
+            
+            <div class="p-6 md:p-8 pt-0 relative flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6">
+                
+                <div class="flex flex-col md:flex-row items-center md:items-end gap-5 -mt-16 z-10 w-full lg:w-auto">
+                    <!-- Profile Avatar -->
+                    <img src="IMG_20260619_181122151.jpg" alt="Rajkumar Baria" class="w-32 h-32 rounded-full object-cover shadow-xl shadow-black/20 border-4 border-white bg-white shrink-0 relative z-20">
+                    
+                    <div class="text-center md:text-left pt-2 md:pb-2">
+                        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-1 tracking-tight">Rajkumar Baria</h1>
+                        <p class="text-gray-700 text-base md:text-lg font-medium">Welcome to my personal link and file repository.</p>
+                    </div>
+                </div>
+
+                <!-- Social Links with requested URLs and Usernames -->
+                <div class="mt-2 lg:mt-0 flex flex-wrap justify-center gap-3 z-10 lg:pb-3">
+                    
+                    <!-- Facebook Link -->
+                    <a href="https://www.facebook.com/share/1EK5jqWrK9/" target="_blank" class="social-btn facebook" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    
+                    <!-- X (Twitter) Link with new logo -->
+                    <a href="https://x.com/raj_baria" target="_blank" class="social-btn x-twitter" title="X (Twitter) @raj_baria">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    
+                    <!-- Instagram Link -->
+                    <a href="https://www.instagram.com/rajsbaria/" target="_blank" class="social-btn instagram" title="Instagram @rajsbaria">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <!-- WhatsApp Link -->
+                    <a href="https://wa.me/916352840795" target="_blank" class="social-btn whatsapp" title="WhatsApp +916352840795">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <!-- Gmail Link -->
+                    <a href="mailto:rk3171998@gmail.com" class="social-btn gmail" title="Email rk3171998@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="flex items-center justify-between mb-6 px-2">
+                <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-3 drop-shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-folder-open text-blue-600"></i>
+                    </div>
+                    Available Downloads
+                </h2>
+                <span class="bg-white/80 backdrop-blur border border-blue-200 text-blue-700 text-sm font-bold px-4 py-1.5 rounded-full shadow-sm" id="fileCount">0 Files</span>
+            </div>
+
+            <!-- File List Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="fileContainer">
+                <!-- Files will be injected here by JavaScript -->
+            </div>
+        </main>
+
+        <footer class="mt-16 text-center text-gray-600 text-sm pb-8 font-medium">
+            <p>&copy; <span id="year"></span> Rajkumar Baria. All rights reserved.</p>
+            <p class="mt-1 opacity-75">Designed for easy file & link sharing.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // તમારી અપલોડ કરેલી ફાઈલ અહી ઉમેરી છે
+        const files = [
+            {
+                name: "Helical Solar System.apk",
+                description: "Solar System 3D Android App",
+                size: "15.6 MB",
+                date: "Sept 2026",
+                icon: "fa-android",
+                iconClass: "file-icon-apk",
+                url: "https://github.com/RajBaria/my-downloads/raw/refs/heads/main/Helical%20Solar%20System.apk"
+            }
+        ];
+
+        document.getElementById('fileCount').textContent = `${files.length} Files`;
+
+        const container = document.getElementById('fileContainer');
+
+        if (files.length === 0) {
+            // જો લિસ્ટ ખાલી હોય તો આ મેસેજ દેખાશે
+            container.innerHTML = `
+                <div class="col-span-1 md:col-span-2 text-center py-16 opacity-80 glass-card rounded-2xl">
+                    <i class="fas fa-folder-open text-gray-400 text-6xl mb-4"></i>
+                    <h3 class="text-xl text-gray-700 font-bold">હાલમાં કોઈ ફાઈલ ઉપલબ્ધ નથી</h3>
+                    <p class="text-gray-500 mt-2">જ્યારે નવી ફાઈલ ઉમેરવામાં આવશે ત્યારે તે અહીં દેખાશે.</p>
+                </div>
+            `;
+        } else {
+            files.forEach(file => {
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl p-5 flex items-start gap-4 transition-all hover:-translate-y-2 hover:shadow-2xl duration-300 group';
+                
+                card.innerHTML = `
+                    <div class="w-14 h-14 rounded-xl bg-white shadow-sm border border-gray-100 flex items-center justify-center shrink-0">
+                        <i class="fab ${file.icon} text-3xl ${file.iconClass}"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-lg font-bold text-gray-900 truncate" title="${file.name}">${file.name}</h3>
+                        <p class="text-sm text-gray-600 mb-2 truncate">${file.description}</p>
+                        <div class="flex items-center gap-3 text-xs text-gray-500 font-medium">
+                            <span class="flex items-center gap-1 bg-white/50 px-2 py-1 rounded-md"><i class="fas fa-database text-gray-400"></i> ${file.size}</span>
+                            <span class="flex items-center gap-1 bg-white/50 px-2 py-1 rounded-md"><i class="far fa-calendar-alt text-gray-400"></i> ${file.date}</span>
+                        </div>
+                    </div>
+                    <a href="${file.url}" download="${file.name}" class="shrink-0 w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer border border-blue-100 group-hover:border-blue-600 group-hover:shadow-lg group-hover:shadow-blue-500/30">
+                        <i class="fas fa-download text-lg"></i>
+                    </a>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Custom Toast Message Function
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-6 right-6 bg-gray-900 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 transition-opacity duration-300 z-50 font-medium';
+            toast.innerHTML = `<i class="fas fa-check-circle text-green-400 text-xl"></i> ${message}`;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => document.body.removeChild(toast), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
